@@ -40,18 +40,15 @@ Discuss the differences in execution time and output quality.
 !pip install git+https://github.com/andreinechaev/nvcc4jupyter.git
 %load_ext nvcc4jupyter
 ```
-<img width="1623" height="362" alt="image" src="https://github.com/user-attachments/assets/651cf458-f4da-4af7-b11d-34752efcc6ec" />
-
+<img width="788" height="334" alt="image" src="https://github.com/user-attachments/assets/f70aa433-fad1-4e67-8e87-f2d606a852f9" />
 ```
 !nvcc --version
 ```
-<img width="633" height="126" alt="image" src="https://github.com/user-attachments/assets/6cf2addb-0c66-4a03-8727-2259a3886cdd" />
-
+<img width="602" height="108" alt="image" src="https://github.com/user-attachments/assets/3d64dbab-181f-4692-a295-491b5265b1ca" />
 ```
 %load_ext nvcc4jupyter
 ```
-<img width="745" height="57" alt="image" src="https://github.com/user-attachments/assets/88cf07f7-4fa6-4630-bbc0-5443a45be248" />
-
+<img width="654" height="52" alt="image" src="https://github.com/user-attachments/assets/6a6dac20-e83d-4c5a-8e65-32c730b7fae7" />
 ```
 from pathlib import Path
 
@@ -61,53 +58,46 @@ if file_path.exists():
 else:
     print("File does not exist!")
 ```
-<img width="267" height="35" alt="image" src="https://github.com/user-attachments/assets/e2eed582-dfda-4f0c-be54-1e0ba3f54b7e" />
-
+<img width="378" height="43" alt="image" src="https://github.com/user-attachments/assets/c47b9994-5a5a-4f53-8722-b0dcafd47b1a" />
 ```
 import os
 print("Current Working Directory:", os.getcwd())
 ```
-<img width="386" height="30" alt="image" src="https://github.com/user-attachments/assets/17ef8a53-6807-4fc8-a204-d8d043fef034" />
-
+<img width="484" height="36" alt="image" src="https://github.com/user-attachments/assets/a20aa44d-5668-4803-82f1-ae859993db1a" />
 ```
 from google.colab import files
 uploaded = files.upload()
 ```
-<img width="681" height="86" alt="image" src="https://github.com/user-attachments/assets/245bf7a1-9fb6-48fc-b450-cc0fc21c36f7" />
-
+<img width="747" height="80" alt="image" src="https://github.com/user-attachments/assets/d88d4991-f7e8-44d0-8e21-eb67b52d21e5" />
 ```
 from pathlib import Path
 
-file_path = Path("66666.jpg")
+file_path = Path("images.jpeg")
 
 if file_path.exists():
     print("File exists!")
 else:
     print("File does not exist!")
 ```
-<img width="188" height="33" alt="image" src="https://github.com/user-attachments/assets/d4de8c0e-43c0-4d14-bdc2-0ffea9759b92" />
-
+<img width="249" height="37" alt="image" src="https://github.com/user-attachments/assets/229caa38-399b-48ab-a82e-017de1981638" />
 ```
 pwd
 ```
-<img width="187" height="38" alt="image" src="https://github.com/user-attachments/assets/b583283b-c54b-467f-b959-274a74d5ac2c" />
-
+<img width="199" height="39" alt="image" src="https://github.com/user-attachments/assets/d0420344-922f-458a-af49-3e87719a2955" />
 ```
-ls "/content/66666.jpg"
+ls "/content/images.jpeg"
 ```
-<img width="261" height="35" alt="image" src="https://github.com/user-attachments/assets/226061a7-bd3a-4cdc-8d6a-223362260a84" />
-
+<img width="263" height="31" alt="image" src="https://github.com/user-attachments/assets/fcfebbf1-617a-449c-bd89-40f4d9be275e" />
 ```
 #ls -l /content/66666.jpg
 import cv2
-image = cv2.imread('/content/66666.jpg')
+image = cv2.imread('/content/images.jpeg')
 if image is None:
     print("Error: Image not found or unable to read the image.")
 else:
     print("Image read successfully.")
 ```
-<img width="313" height="35" alt="image" src="https://github.com/user-attachments/assets/b18609cd-f084-439c-a758-1926d103b425" />
-
+<img width="283" height="36" alt="image" src="https://github.com/user-attachments/assets/c5636de8-a861-4bca-8ea0-234f3cd57c3f" />
 ```
 %%writefile sobelEdgeDetectionFilter.cu
 
@@ -333,36 +323,36 @@ int main()
     return 0;
 }
 ```
-<img width="460" height="33" alt="image" src="https://github.com/user-attachments/assets/dc893bb2-a2a9-4ff8-9ed3-9d90a9f873cd" />
 
+<img width="411" height="32" alt="image" src="https://github.com/user-attachments/assets/a203c938-528e-49ad-9316-5dc8ec1f5423" />
 ```
+
 !nvcc -o sobelEdgeDetectionFilter sobelEdgeDetectionFilter.cu `pkg-config --cflags --libs opencv4`
 ```
-<img width="1715" height="197" alt="image" src="https://github.com/user-attachments/assets/f91c1ceb-cc2e-454a-99bc-f6c6b1f5342e" />
 
+<img width="773" height="181" alt="image" src="https://github.com/user-attachments/assets/5fce4487-4455-4b76-b639-e1e789b32dae" />
 ```
 !./sobelEdgeDetectionFilter
 ```
-<img width="763" height="41" alt="image" src="https://github.com/user-attachments/assets/53559a2d-f45b-47f6-b5a7-193cfba47bdd" />
+
+<img width="701" height="34" alt="image" src="https://github.com/user-attachments/assets/3ea44c2e-3aee-48f3-9b3e-bad3dba030c8" />
 
 ```
 import cv2
 from matplotlib import pyplot as plt
 ```
-# Read and display the output image
 ```
-output_image_path = '/content/66666.jpg'
+output_image_path = '/content/images.jpeg'
 output_image = cv2.imread(output_image_path, cv2.IMREAD_GRAYSCALE)  # Use IMREAD_GRAYSCALE if it's a single-channel image
 ```
-# Display the image
 ```
 plt.imshow(output_image, cmap='gray')
 plt.title('Edge Detection Output')
 plt.axis('off')  # Hide the axes
 plt.show()
 ```
-## OUTPUT:
-<img width="736" height="411" alt="image" src="https://github.com/user-attachments/assets/3831879a-7cfc-460a-b445-c2b255b26cdf" />
+
+<img width="728" height="478" alt="image" src="https://github.com/user-attachments/assets/8067b3e6-eb21-4dc2-9199-702b03224a7d" />
 
 
 ## RESULT:
